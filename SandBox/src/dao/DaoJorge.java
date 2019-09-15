@@ -97,31 +97,4 @@ public class DaoJorge {
             return null;
         }
     }
-    
-    public static List<jorge> buscar() {
-        List<jorge> resultados = new ArrayList<>();
-        
-        String nome;
-        nome = ListagemJorges.jtfNome.getText();
-        //editar o SQL conforme a entidade
-        String sql = "SELECT id, nome, skill FROM jorge WHERE nome LIKE "+nome;
-        PreparedStatement ps;
-        try {
-            ps = conexao.Conexao.getConexao().prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                jorge objeto = new jorge();
-                //definir um set para cada atributo da entidade, cuidado com o tipo
-                objeto.setId(rs.getInt("id"));
-                objeto.setNome(rs.getString("nome"));
-                objeto.setSkill(rs.getString("skill"));
-                
-                resultados.add(objeto);//não mexa nesse, ele adiciona o objeto na lista
-            }
-            return resultados;
-        } catch (SQLException | ClassNotFoundException ex) {
-            System.out.println(ex.getMessage());
-            return null;
-        }
-    }
 }

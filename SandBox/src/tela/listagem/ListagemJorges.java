@@ -6,6 +6,7 @@
 package tela.listagem;
 
 import controlador.ControladorJorge;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -106,7 +107,7 @@ public class ListagemJorges extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-ControladorJorge.buscarTabela(tabela);
+        JOptionPane.showMessageDialog(null, "teste");
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**

@@ -80,23 +80,4 @@ public class ControladorJorge {
         }
         tabela.setModel(modelo);
     }
-    
-    public static void buscarTabela(JTable tabela) {
-        DefaultTableModel modelo = new DefaultTableModel();
-        //definindo o cabeçalho da tabela
-        modelo.addColumn("Id");
-        modelo.addColumn("Nome");
-        modelo.addColumn("Skill");
-        List<jorge> resultados = DaoJorge.buscar();
-        for (jorge objeto : resultados) {
-            Vector linha = new Vector();
-            
-            //definindo o conteúdo da tabela
-            linha.add(objeto.getId());
-            linha.add(objeto.getNome());
-            linha.add(objeto.getSkill());
-            modelo.addRow(linha); //adicionando a linha na tabela
-        }
-        tabela.setModel(modelo);
-    }
 }

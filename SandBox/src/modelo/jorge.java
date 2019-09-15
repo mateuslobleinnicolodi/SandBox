@@ -16,8 +16,8 @@ public class jorge {
     private String nome;
     private String skill;
     
-    
 
+    
     public int getId() {
         return id;
     }
